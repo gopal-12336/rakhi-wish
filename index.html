@@ -4,62 +4,161 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>शुभ रक्षाबंधन ❤️</title>
+
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
+
 body{
 font-family:Arial,"Noto Sans Devanagari",sans-serif;
-min-height:100vh;text-align:center;color:#641a3b;
+min-height:100vh;
+text-align:center;
+color:#641a3b;
 background:linear-gradient(135deg,#fff0f6,#ffe6c9,#fff9df);
 padding:20px 12px
 }
+
 .wrap{max-width:620px;margin:auto}
-h1{font-size:40px;color:#b21f50;margin:12px 0}
-.sub{line-height:1.6;color:#7b4058;margin-bottom:20px}
+
+h1{
+font-size:40px;
+color:#b21f50;
+margin:12px 0
+}
+
+.sub{
+line-height:1.6;
+color:#7b4058;
+margin-bottom:20px
+}
+
 .box{
-background:#fff;padding:22px;border-radius:22px;
+background:#fff;
+padding:22px;
+border-radius:22px;
 box-shadow:0 10px 35px #8b315020
 }
+
 input,select{
-width:100%;padding:14px;margin:8px 0 12px;
-border:2px solid #efd1dc;border-radius:12px;
+width:100%;
+padding:14px;
+margin:8px 0 12px;
+border:2px solid #efd1dc;
+border-radius:12px;
 font-size:16px
 }
+
 button{
-width:100%;padding:14px;margin-top:10px;border:0;
-border-radius:12px;font-size:16px;font-weight:bold;cursor:pointer
+width:100%;
+padding:14px;
+margin-top:10px;
+border:0;
+border-radius:12px;
+font-size:16px;
+font-weight:bold;
+cursor:pointer
 }
-.main{background:linear-gradient(135deg,#c92862,#ed7544);color:white}
+
+.main{
+background:linear-gradient(135deg,#c92862,#ed7544);
+color:white
+}
+
 .green{background:#25d366;color:white}
 .blue{background:#5b4bc4;color:white}
 .gold{background:#e5ae32;color:#4b2b00}
-.result{display:none;margin-top:25px}
+
+.result{
+display:none;
+margin-top:25px
+}
+
 .frame{
-padding:10px;border-radius:24px;
-background:linear-gradient(135deg,#b77a16,#fff0a0,#d39a28,#fff0a0,#b77a16);
+padding:10px;
+border-radius:24px;
+background:linear-gradient(
+135deg,
+#b77a16,
+#fff0a0,
+#d39a28,
+#fff0a0,
+#b77a16
+);
 box-shadow:0 15px 40px #63243b35
 }
+
 .inner{
-background:#fffdf1;border:3px solid #9d6818;
-border-radius:17px;padding:30px 20px;
+background:#fffdf1;
+border:3px solid #9d6818;
+border-radius:17px;
+padding:30px 20px;
 position:relative
 }
-.title{font-size:29px;color:#a51f50;margin:12px}
-.name{font-size:24px;font-weight:bold;color:#74183f;margin:15px}
-.wish{white-space:pre-line;line-height:1.8;font-size:17px;color:#593444}
-.sign{margin-top:18px;font-weight:bold;color:#8c3d5c}
-.small{font-size:14px;margin-top:20px;color:#89556b}
+
+.title{
+font-size:29px;
+color:#a51f50;
+margin:12px
+}
+
+.name{
+font-size:24px;
+font-weight:bold;
+color:#74183f;
+margin:15px
+}
+
+.wish{
+white-space:pre-line;
+line-height:1.8;
+font-size:17px;
+color:#593444
+}
+
+.sign{
+margin-top:18px;
+font-weight:bold;
+color:#8c3d5c
+}
+
+.small{
+font-size:14px;
+margin-top:20px;
+color:#89556b
+}
+
+.loading{
+display:none;
+margin-top:12px;
+font-size:14px;
+color:#8c3d5c
+}
+
+@media(max-width:500px){
+h1{font-size:34px}
+.title{font-size:26px}
+.name{font-size:22px}
+.wish{font-size:16px}
+}
 </style>
 </head>
 
 <body>
+
 <div class="wrap">
 
 <div style="font-size:55px">🎀</div>
+
 <h1>शुभ रक्षाबंधन ❤️</h1>
-<p class="sub">अपने भाई या बहन के लिए<br>एक खास शुभकामना बनाएं ✨</p>
+
+<p class="sub">
+अपने भाई या बहन के लिए<br>
+एक खास शुभकामना बनाएं ✨
+</p>
 
 <div class="box">
+
 <input id="from" placeholder="आपका नाम">
+
 <input id="to" placeholder="भाई / बहन का नाम">
 
 <select id="relation">
@@ -67,136 +166,441 @@ position:relative
 <option value="sister">बहन ❤️</option>
 </select>
 
-<button class="main" onclick="makeWish()">✨ शुभकामना बनाएं</button>
+<button class="main" onclick="makeWish()">
+✨ शुभकामना बनाएं
+</button>
+
 </div>
+
 
 <div class="result" id="result">
-<div class="frame">
+
+<div class="frame" id="card">
+
 <div class="inner">
+
 <div>🪔 शुभ रक्षाबंधन 🪔</div>
-<div class="title">🎀 राखी की शुभकामनाएं 🎀</div>
+
+<div class="title">
+🎀 राखी की शुभकामनाएं 🎀
+</div>
+
 <div class="name" id="name"></div>
+
 <div class="wish" id="wish"></div>
+
 <div class="sign" id="sign"></div>
-<div style="font-size:25px;margin-top:18px">🌸 🪢 🌸</div>
+
+<div style="font-size:25px;margin-top:18px">
+🌸 🪢 🌸
+</div>
+
 </div>
 </div>
 
-<button class="green" onclick="share()">📲 WhatsApp पर शेयर करें</button>
-<button class="gold" onclick="newWish()">🔄 नई शुभकामना</button>
-<button class="blue" onclick="copyWish()">📋 कॉपी करें</button>
-<button class="gold" onclick="downloadCard()">🖼️ कार्ड डाउनलोड करें</button>
+
+<button class="green" onclick="share()">
+📲 WhatsApp पर शेयर करें
+</button>
+
+
+<button class="gold" onclick="newWish()">
+🔄 नई शुभकामना
+</button>
+
+
+<button class="blue" onclick="copyWish()">
+📋 कॉपी करें
+</button>
+
+
+<button class="gold" onclick="downloadCard()">
+🖼️ कार्ड डाउनलोड करें
+</button>
+
+
+<div class="loading" id="loading">
+⏳ कार्ड तैयार हो रहा है...
 </div>
 
-<p class="small">Made with ❤️ for Raksha Bandhan</p>
 </div>
+
+
+<p class="small">
+अपने भाई या बहन को यह शुभकामना जरूर भेजें ❤️
+<br><br>
+Made with ❤️ for Raksha Bandhan
+</p>
+
+</div>
+
 
 <script>
-const brother=[
-`भाई, इस रक्षाबंधन पर मेरी यही दुआ है कि तुम्हारी जिंदगी हमेशा खुशियों से भरी रहे। तुम हमेशा मुस्कुराते रहो और अपने हर सपने को पूरा करो। ❤️`,
-`प्यारे भाई, बचपन की शरारतों से लेकर आज तक हमारा रिश्ता हमेशा खास रहा है। ईश्वर तुम्हें जीवन की हर खुशी दे। शुभ रक्षाबंधन! 🎀`,
-`कभी लड़ाई, कभी मजाक और कभी प्यार... इन्हीं यादों से हमारा रिश्ता इतना खूबसूरत है। मेरे प्यारे भाई को रक्षाबंधन की ढेर सारी शुभकामनाएं। ❤️`,
-`इस राखी पर तुम्हारी कलाई पर सिर्फ धागा नहीं, बल्कि मेरी ढेर सारी शुभकामनाएं बंधी हैं। हमेशा खुश रहो भाई। 🌸`
+
+/* =========================
+   WISHES
+========================= */
+
+const brother = [
+
+`भाई, इस रक्षाबंधन पर मेरी यही दुआ है कि तुम्हारी जिंदगी हमेशा खुशियों से भरी रहे।
+
+तुम हमेशा मुस्कुराते रहो और अपने हर सपने को पूरा करो। ❤️`,
+
+`प्यारे भाई, बचपन की शरारतों से लेकर आज तक हमारा रिश्ता हमेशा खास रहा है।
+
+ईश्वर तुम्हें जीवन की हर खुशी दे।
+
+शुभ रक्षाबंधन! 🎀`,
+
+`कभी लड़ाई, कभी मजाक और कभी प्यार...
+
+इन्हीं यादों से हमारा रिश्ता इतना खूबसूरत है।
+
+मेरे प्यारे भाई को रक्षाबंधन की ढेर सारी शुभकामनाएं। ❤️`,
+
+`इस राखी पर तुम्हारी कलाई पर सिर्फ धागा नहीं, बल्कि मेरी ढेर सारी शुभकामनाएं बंधी हैं।
+
+हमेशा खुश रहो भाई। 🌸`,
+
+`भाई-बहन का रिश्ता जिंदगी के सबसे खूबसूरत रिश्तों में से एक है।
+
+हमारी यह प्यारी bonding हमेशा ऐसी ही बनी रहे।
+
+शुभ रक्षाबंधन भाई! ❤️`
 ];
 
-const sister=[
-`प्यारी बहन, इस रक्षाबंधन पर मेरी यही दुआ है कि तुम्हारी जिंदगी हमेशा खुशियों से भरी रहे और तुम्हारे चेहरे की मुस्कान कभी कम न हो। ❤️`,
-`तुम सिर्फ मेरी बहन नहीं, मेरी सबसे अच्छी दोस्त भी हो। तुम्हारे साथ बिताया हर पल मेरे लिए खास है। शुभ रक्षाबंधन! 🌸`,
-`हमारी छोटी-छोटी लड़ाइयां, मस्ती और यादें ही हमारे रिश्ते को खास बनाती हैं। मेरी प्यारी बहन को रक्षाबंधन की बहुत सारी शुभकामनाएं। 🎀`,
-`ईश्वर तुम्हारे हर सपने को पूरा करे और तुम्हें जिंदगी की हर खुशी मिले। मेरी प्यारी बहन को शुभ रक्षाबंधन! ❤️`
+
+const sister = [
+
+`प्यारी बहन, इस रक्षाबंधन पर मेरी यही दुआ है कि तुम्हारी जिंदगी हमेशा खुशियों से भरी रहे।
+
+तुम हमेशा मुस्कुराती रहो। ❤️`,
+
+`तुम सिर्फ मेरी बहन नहीं, मेरी सबसे अच्छी दोस्त भी हो।
+
+तुम्हारे साथ बिताया हर पल मेरे लिए खास है।
+
+शुभ रक्षाबंधन! 🌸`,
+
+`हमारी छोटी-छोटी लड़ाइयां, मस्ती और यादें ही हमारे रिश्ते को खास बनाती हैं।
+
+मेरी प्यारी बहन को रक्षाबंधन की बहुत सारी शुभकामनाएं। 🎀`,
+
+`ईश्वर तुम्हारे हर सपने को पूरा करे और तुम्हें जिंदगी की हर खुशी मिले।
+
+मेरी प्यारी बहन को शुभ रक्षाबंधन! ❤️`,
+
+`रिश्ते बहुत होते हैं जिंदगी में, लेकिन भाई-बहन का रिश्ता सबसे अनमोल होता है।
+
+मेरी प्यारी बहन को रक्षाबंधन की ढेर सारी शुभकामनाएं। 🪢🌸`
 ];
 
-let current="";
-let last=-1;
+
+let current = "";
+let last = -1;
+
+
+/* =========================
+   CREATE
+========================= */
 
 function makeWish(){
-let from=document.getElementById("from").value.trim();
-let to=document.getElementById("to").value.trim();
-let rel=document.getElementById("relation").value;
 
-if(!from||!to){alert("दोनों नाम लिखें ❤️");return}
+let from =
+document.getElementById("from").value.trim();
 
-showWish(from,to,rel);
-history.replaceState(null,"",location.pathname+
-"?from="+encodeURIComponent(from)+
-"&to="+encodeURIComponent(to)+
-"&r="+rel);
+let to =
+document.getElementById("to").value.trim();
+
+let relation =
+document.getElementById("relation").value;
+
+if(!from || !to){
+
+alert("कृपया दोनों नाम लिखें ❤️");
+
+return;
 }
 
-function showWish(from,to,rel){
-let arr=rel==="brother"?brother:sister;
+showWish(from,to,relation);
+
+updateURL(from,to,relation);
+}
+
+
+/* =========================
+   SHOW WISH
+========================= */
+
+function showWish(from,to,relation){
+
+let arr =
+relation === "brother"
+? brother
+: sister;
+
 let i;
-do{i=Math.floor(Math.random()*arr.length)}
-while(arr.length>1&&i===last);
+
+do{
+i=Math.floor(Math.random()*arr.length);
+}
+while(arr.length>1 && i===last);
+
 last=i;
+
 current=arr[i];
 
-document.getElementById("name").innerText="प्रिय "+to+" ❤️";
-document.getElementById("wish").innerText=current;
-document.getElementById("sign").innerText="प्यार सहित — "+from+" ❤️";
-document.getElementById("result").style.display="block";
-document.getElementById("result").scrollIntoView({behavior:"smooth"});
+document.getElementById("name").innerText=
+"प्रिय "+to+" ❤️";
+
+document.getElementById("wish").innerText=
+current;
+
+document.getElementById("sign").innerText=
+"प्यार सहित — "+from+" ❤️";
+
+document.getElementById("result").style.display=
+"block";
+
+document.getElementById("result").scrollIntoView({
+behavior:"smooth"
+});
 }
 
-function newWish(){
-let from=document.getElementById("from").value.trim();
-let to=document.getElementById("to").value.trim();
-let rel=document.getElementById("relation").value;
-if(!from||!to){return}
-showWish(from,to,rel);
-history.replaceState(null,"",location.pathname+
+
+/* =========================
+   URL
+========================= */
+
+function updateURL(from,to,relation){
+
+let url=
+location.pathname+
 "?from="+encodeURIComponent(from)+
 "&to="+encodeURIComponent(to)+
-"&r="+rel);
+"&r="+encodeURIComponent(relation);
+
+history.replaceState(null,"",url);
 }
 
+
+/* =========================
+   NEW WISH
+========================= */
+
+function newWish(){
+
+let from=
+document.getElementById("from").value.trim();
+
+let to=
+document.getElementById("to").value.trim();
+
+let relation=
+document.getElementById("relation").value;
+
+if(!from || !to){
+
+alert("पहले नाम लिखें ❤️");
+
+return;
+}
+
+showWish(from,to,relation);
+
+updateURL(from,to,relation);
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
+
 function share(){
-let from=document.getElementById("from").value.trim();
-let to=document.getElementById("to").value.trim();
+
+let from=
+document.getElementById("from").value.trim();
+
+let to=
+document.getElementById("to").value.trim();
 
 let link=location.href;
 
-let text=`🎀 शुभ रक्षाबंधन 🎀
+let text=
+`🎀 शुभ रक्षाबंधन 🎀
 
 प्रिय ${to} ❤️
 
 आपके लिए एक खास Rakhi Wish है।
 
-${link}`;
+👇 अपना खास संदेश देखने के लिए link खोलें:
 
-window.open("https://wa.me/?text="+encodeURIComponent(text),"_blank");
+${link}
+
+❤️ शुभ रक्षाबंधन ❤️`;
+
+window.open(
+"https://wa.me/?text="+
+encodeURIComponent(text),
+"_blank"
+);
 }
 
-function copyWish(){
-let from=document.getElementById("from").value.trim();
-let to=document.getElementById("to").value.trim();
 
-navigator.clipboard.writeText(
+/* =========================
+   COPY
+========================= */
+
+function copyWish(){
+
+let from=
+document.getElementById("from").value.trim();
+
+let to=
+document.getElementById("to").value.trim();
+
+let text=
 `🎀 शुभ रक्षाबंधन 🎀
 
 प्रिय ${to} ❤️
 
 ${current}
 
-प्यार सहित — ${from} ❤️`
-).then(()=>alert("Wish कॉपी हो गई ❤️"));
+प्यार सहित —
+${from} ❤️`;
+
+navigator.clipboard.writeText(text)
+.then(function(){
+
+alert("Wish कॉपी हो गई ❤️");
+
+})
+.catch(function(){
+
+alert("Copy नहीं हो पाया।");
+
+});
 }
 
-function loadFromLink(){
-let p=new URLSearchParams(location.search);
-let from=p.get("from");
-let to=p.get("to");
-let r=p.get("r");
 
-if(from&&to){
-document.getElementById("from").value=from;
-document.getElementById("to").value=to;
-document.getElementById("relation").value=r||"brother";
-showWish(from,to,r||"brother");
+/* =========================
+   DOWNLOAD CARD
+========================= */
+
+function downloadCard(){
+
+const card=
+document.getElementById("card");
+
+const loading=
+document.getElementById("loading");
+
+loading.style.display="block";
+
+
+/*
+html2canvas library dynamically load
+*/
+
+if(typeof html2canvas === "undefined"){
+
+let script=
+document.createElement("script");
+
+script.src=
+"https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js";
+
+script.onload=function(){
+
+captureCard();
+
+};
+
+script.onerror=function(){
+
+loading.style.display="none";
+
+alert(
+"Download अभी उपलब्ध नहीं है। कृपया बाद में कोशिश करें।"
+);
+
+};
+
+document.body.appendChild(script);
+
+}else{
+
+captureCard();
+
+}
+
+
+function captureCard(){
+
+html2canvas(card,{
+scale:2,
+backgroundColor:"#fffdf1",
+useCORS:true
+}).then(function(canvas){
+
+let link=
+document.createElement("a");
+
+link.download=
+"Raksha-Bandhan-Wish.png";
+
+link.href=
+canvas.toDataURL("image/png");
+
+link.click();
+
+loading.style.display="none";
+
+});
+}
+
+}
+
+
+/* =========================
+   LOAD SHARED LINK
+========================= */
+
+function loadFromLink(){
+
+let params=
+new URLSearchParams(location.search);
+
+let from=params.get("from");
+
+let to=params.get("to");
+
+let relation=params.get("r");
+
+if(from && to){
+
+document.getElementById("from").value=
+from;
+
+document.getElementById("to").value=
+to;
+
+document.getElementById("relation").value=
+relation || "brother";
+
+showWish(
+from,
+to,
+relation || "brother"
+);
+
 }
 }
 
 loadFromLink();
+
 </script>
+
 </body>
 </html>
