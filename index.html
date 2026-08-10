@@ -3,16 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-
 <title>शुभ रक्षाबंधन ❤️</title>
 
 <style>
-
-*{
-box-sizing:border-box;
-margin:0;
-padding:0
-}
+*{box-sizing:border-box;margin:0;padding:0}
 
 body{
 font-family:Arial,"Noto Sans Devanagari",sans-serif;
@@ -24,14 +18,7 @@ padding:20px 12px;
 overflow-x:hidden
 }
 
-.wrap{
-max-width:650px;
-margin:auto;
-position:relative;
-z-index:2
-}
-
-/* FESTIVE ANIMATION */
+.wrap{max-width:650px;margin:auto;position:relative;z-index:2}
 
 .floating{
 position:fixed;
@@ -44,39 +31,16 @@ opacity:.85
 }
 
 @keyframes fall{
-
-0%{
-transform:translateY(-50px) rotate(0deg);
-opacity:0
+0%{transform:translateY(-50px) rotate(0deg);opacity:0}
+10%{opacity:1}
+100%{transform:translateY(110vh) rotate(360deg);opacity:0}
 }
 
-10%{
-opacity:1
-}
-
-100%{
-transform:translateY(110vh) rotate(360deg);
-opacity:0
-}
-
-}
-
-.glow{
-animation:glow 2s infinite alternate
-}
+.glow{animation:glow 2s infinite alternate}
 
 @keyframes glow{
-
-from{
-text-shadow:0 0 5px #ff8aa8
-}
-
-to{
-text-shadow:
-0 0 10px #ff5b88,
-0 0 25px #ff9db8
-}
-
+from{text-shadow:0 0 5px #ff8aa8}
+to{text-shadow:0 0 10px #ff5b88,0 0 25px #ff9db8}
 }
 
 .rakhi{
@@ -86,15 +50,8 @@ display:inline-block
 }
 
 @keyframes rakhi{
-
-0%,100%{
-transform:rotate(-5deg) scale(1)
-}
-
-50%{
-transform:rotate(5deg) scale(1.08)
-}
-
+0%,100%{transform:rotate(-5deg) scale(1)}
+50%{transform:rotate(5deg) scale(1.08)}
 }
 
 h1{
@@ -117,17 +74,23 @@ box-shadow:0 10px 35px #8b315020;
 backdrop-filter:blur(5px)
 }
 
-input,select{
+input,select,textarea{
 width:100%;
 padding:14px;
 margin:8px 0 12px;
 border:2px solid #efd1dc;
 border-radius:12px;
 font-size:16px;
-outline:none
+outline:none;
+font-family:inherit
 }
 
-input:focus,select:focus{
+textarea{
+resize:none;
+line-height:1.5
+}
+
+input:focus,select:focus,textarea:focus{
 border-color:#c92862;
 box-shadow:0 0 8px #c9286230
 }
@@ -154,20 +117,9 @@ background:linear-gradient(135deg,#c92862,#ed7544);
 color:white
 }
 
-.green{
-background:#25d366;
-color:white
-}
-
-.blue{
-background:#5b4bc4;
-color:white
-}
-
-.gold{
-background:#e5ae32;
-color:#4b2b00
-}
+.green{background:#25d366;color:white}
+.blue{background:#5b4bc4;color:white}
+.gold{background:#e5ae32;color:#4b2b00}
 
 .photo-label{
 display:block;
@@ -180,9 +132,7 @@ margin:8px 0 12px;
 font-weight:bold
 }
 
-#photoInput{
-display:none
-}
+#photoInput{display:none}
 
 .designs{
 display:flex;
@@ -209,7 +159,6 @@ margin-top:25px
 .frame{
 padding:10px;
 border-radius:24px;
-
 background:linear-gradient(
 135deg,
 #b77a16,
@@ -218,10 +167,7 @@ background:linear-gradient(
 #fff0a0,
 #b77a16
 );
-
-box-shadow:
-0 15px 40px #63243b35,
-0 0 25px #e8a63d55
+box-shadow:0 15px 40px #63243b35,0 0 25px #e8a63d55
 }
 
 .inner{
@@ -255,6 +201,19 @@ margin:15px auto;
 box-shadow:0 5px 20px #63300030
 }
 
+.custom-display{
+display:none;
+white-space:pre-line;
+line-height:1.8;
+font-size:17px;
+color:#593444;
+margin:15px 0;
+padding:14px;
+border-radius:12px;
+background:#fff4f7;
+border:1px solid #efd1dc
+}
+
 .wish{
 white-space:pre-line;
 line-height:1.8;
@@ -280,16 +239,8 @@ margin-top:12px;
 color:#8c3d5c
 }
 
-
-/* DESIGN 2 */
-
 .d2 .frame{
-background:linear-gradient(
-135deg,
-#8b1e3f,
-#f7b2c4,
-#8b1e3f
-)
+background:linear-gradient(135deg,#8b1e3f,#f7b2c4,#8b1e3f)
 }
 
 .d2 .inner{
@@ -297,20 +248,10 @@ background:#fff5f8;
 border-color:#8b1e3f
 }
 
-.d2 .title{
-color:#8b1e3f
-}
-
-
-/* DESIGN 3 */
+.d2 .title{color:#8b1e3f}
 
 .d3 .frame{
-background:linear-gradient(
-135deg,
-#d47b00,
-#ffe49a,
-#d47b00
-)
+background:linear-gradient(135deg,#d47b00,#ffe49a,#d47b00)
 }
 
 .d3 .inner{
@@ -318,20 +259,10 @@ background:#fff9e8;
 border-color:#c47700
 }
 
-.d3 .title{
-color:#c47700
-}
-
-
-/* DESIGN 4 */
+.d3 .title{color:#c47700}
 
 .d4 .frame{
-background:linear-gradient(
-135deg,
-#6138a8,
-#d8c4ff,
-#6138a8
-)
+background:linear-gradient(135deg,#6138a8,#d8c4ff,#6138a8)
 }
 
 .d4 .inner{
@@ -339,20 +270,10 @@ background:#faf7ff;
 border-color:#6138a8
 }
 
-.d4 .title{
-color:#6138a8
-}
-
-
-/* DESIGN 5 */
+.d4 .title{color:#6138a8}
 
 .d5 .frame{
-background:linear-gradient(
-135deg,
-#087f73,
-#b8eee7,
-#087f73
-)
+background:linear-gradient(135deg,#087f73,#b8eee7,#087f73)
 }
 
 .d5 .inner{
@@ -360,326 +281,160 @@ background:#f3fffd;
 border-color:#087f73
 }
 
-.d5 .title{
-color:#087f73
-}
-
+.d5 .title{color:#087f73}
 
 @media(max-width:500px){
-
-h1{
-font-size:34px
+h1{font-size:34px}
+.title{font-size:26px}
+.name{font-size:22px}
+.wish,.custom-display{font-size:16px}
+.rakhi{font-size:55px}
 }
-
-.title{
-font-size:26px
-}
-
-.name{
-font-size:22px
-}
-
-.wish{
-font-size:16px
-}
-
-.rakhi{
-font-size:55px
-}
-
-}
-
 </style>
 </head>
-
 
 <body>
 
 <div class="wrap">
 
-<div class="rakhi">
-🪢
-</div>
+<div class="rakhi">🪢</div>
 
-<h1 class="glow">
-शुभ रक्षाबंधन ❤️
-</h1>
+<h1 class="glow">शुभ रक्षाबंधन ❤️</h1>
 
 <p class="sub">
 अपने भाई या बहन के लिए<br>
 एक खूबसूरत Rakhi Wish Card बनाएं ✨
 </p>
 
-
 <div class="box">
 
-<input
-id="from"
-placeholder="अपना नाम लिखें"
->
+<input id="from" placeholder="अपना नाम लिखें">
 
-
-<input
-id="to"
-placeholder="भाई / बहन का नाम लिखें"
->
-
+<input id="to" placeholder="भाई / बहन का नाम लिखें">
 
 <select id="relation">
-
-<option value="brother">
-मैं भाई हूँ 👦
-</option>
-
-<option value="sister">
-मैं बहन हूँ 👧
-</option>
-
+<option value="brother">मैं भाई हूँ 👦</option>
+<option value="sister">मैं बहन हूँ 👧</option>
 </select>
 
+<textarea
+id="customMessage"
+rows="4"
+placeholder="💌 अपना खास संदेश लिखें (Optional)"
+></textarea>
 
 <label class="photo-label">
-
 📸 फोटो चुनें
-
-<input
-id="photoInput"
-type="file"
-accept="image/*"
->
-
+<input id="photoInput" type="file" accept="image/*">
 </label>
 
-
 <p style="font-weight:bold;margin:8px">
-
 🎨 Card Design चुनें
-
 </p>
 
-
 <div class="designs">
-
-<button onclick="setDesign(1)">
-🌸 Classic
-</button>
-
-<button onclick="setDesign(2)">
-🌹 Pink
-</button>
-
-<button onclick="setDesign(3)">
-👑 Golden
-</button>
-
-<button onclick="setDesign(4)">
-💜 Royal
-</button>
-
-<button onclick="setDesign(5)">
-🌿 Teal
-</button>
-
+<button onclick="setDesign(1)">🌸 Classic</button>
+<button onclick="setDesign(2)">🌹 Pink</button>
+<button onclick="setDesign(3)">👑 Golden</button>
+<button onclick="setDesign(4)">💜 Royal</button>
+<button onclick="setDesign(5)">🌿 Teal</button>
 </div>
 
-
-<button
-class="main"
-onclick="makeWish()"
->
-
+<button class="main" onclick="makeWish()">
 ✨ शुभकामना बनाएं
-
 </button>
 
-
-<button
-class="blue"
-onclick="surpriseMe()"
->
-
+<button class="blue" onclick="surpriseMe()">
 🎁 मुझे Surprise करें
-
 </button>
-
 
 </div>
 
-
-
-<div
-class="result"
-id="result"
->
-
+<div class="result" id="result">
 
 <div id="cardWrap">
 
-<div
-class="frame"
-id="card"
->
+<div class="frame" id="card">
 
 <div class="inner">
 
-
-<div>
-🪔 शुभ रक्षाबंधन 🪔
-</div>
-
+<div>🪔 शुभ रक्षाबंधन 🪔</div>
 
 <div class="title">
-
 🎀 राखी की शुभकामनाएं 🎀
-
 </div>
 
+<div class="name" id="name"></div>
+
+<img id="photo" class="photo">
 
 <div
-class="name"
-id="name"
+id="customMessageDisplay"
+class="custom-display"
 ></div>
 
+<div class="wish" id="wish"></div>
 
-<img
-id="photo"
-class="photo"
->
+<div class="sign" id="sign"></div>
 
-
-<div
-class="wish"
-id="wish"
-></div>
-
-
-<div
-class="sign"
-id="sign"
-></div>
-
-
-<div
-style="font-size:25px;margin-top:18px"
->
-
+<div style="font-size:25px;margin-top:18px">
 🌸 🪢 🌸
-
-</div>
-
-
 </div>
 
 </div>
-
+</div>
 </div>
 
-
-
-<button
-class="green"
-onclick="share()"
->
-
+<button class="green" onclick="share()">
 📲 WhatsApp पर शेयर करें
-
 </button>
 
-
-<button
-class="gold"
-onclick="newWish()"
->
-
+<button class="gold" onclick="newWish()">
 🔄 नई शुभकामना
-
 </button>
 
-
-<button
-class="blue"
-onclick="copyWish()"
->
-
+<button class="blue" onclick="copyWish()">
 📋 कॉपी करें
-
 </button>
 
-
-<button
-class="gold"
-onclick="downloadCard()"
->
-
+<button class="gold" onclick="downloadCard()">
 🖼️ कार्ड डाउनलोड करें
-
 </button>
 
-
-<div
-class="loading"
-id="loading"
->
-
+<div class="loading" id="loading">
 ⏳ कार्ड तैयार हो रहा है...
-
 </div>
 
-
 </div>
-
-
 
 <p class="small">
-
 अपने भाई या बहन को यह खूबसूरत कार्ड भेजें ❤️
-
 <br><br>
-
 Made with ❤️ for Raksha Bandhan
-
 </p>
 
-
 </div>
-
-
 
 <script>
 
-
-/* =========================
-   FESTIVE FLOATING EFFECT
-========================= */
+/* FLOATING ANIMATION */
 
 const festiveItems=[
-"🌸",
-"🌺",
-"❤️",
-"💖",
-"✨",
-"🎀",
-"🪢",
-"🌼"
+"🌸","🌺","❤️","💖","✨","🎀","🪢","🌼"
 ];
-
 
 function createFloating(){
 
-const item=
-document.createElement("div");
+const item=document.createElement("div");
 
 item.className="floating";
 
 item.innerText=
 festiveItems[
-Math.floor(
-Math.random()*festiveItems.length
-)
+Math.floor(Math.random()*festiveItems.length)
 ];
 
-item.style.left=
-Math.random()*100+"vw";
+item.style.left=Math.random()*100+"vw";
 
 item.style.animationDuration=
 (5+Math.random()*5)+"s";
@@ -689,26 +444,16 @@ item.style.fontSize=
 
 document.body.appendChild(item);
 
-
-setTimeout(
-()=>{
+setTimeout(()=>{
 item.remove();
-},
-10000
-);
+},10000);
 
 }
 
-
-setInterval(
-createFloating,
-700
-);
+setInterval(createFloating,700);
 
 
-/* =========================
-   BROTHER WISHES
-========================= */
+/* WISHES */
 
 const brother=[
 
@@ -740,11 +485,6 @@ const brother=[
 
 ];
 
-
-/* =========================
-   SISTER WISHES
-========================= */
-
 const sister=[
 
 `भाई, इस रक्षाबंधन पर मेरी यही दुआ है कि तुम्हारी जिंदगी हमेशा खुशियों से भरी रहे।
@@ -775,15 +515,12 @@ const sister=[
 
 ];
 
-
 let current="";
 let last=-1;
 let design=1;
 
 
-/* =========================
-   DESIGN
-========================= */
+/* DESIGN */
 
 function setDesign(n){
 
@@ -792,48 +529,36 @@ design=n;
 if(
 document.getElementById("result").style.display==="block"
 ){
-
 applyDesign();
-
 }
 
 }
-
 
 function applyDesign(){
 
-let card=
-document.getElementById("card");
+let card=document.getElementById("card");
 
 card.className="frame";
 
 if(design>1){
-
 card.classList.add("d"+design);
-
 }
 
 }
 
 
-/* =========================
-   MAKE WISH
-========================= */
+/* MAKE WISH */
 
 function makeWish(){
 
 let from=
-document.getElementById("from")
-.value.trim();
+document.getElementById("from").value.trim();
 
 let to=
-document.getElementById("to")
-.value.trim();
+document.getElementById("to").value.trim();
 
 let relation=
-document.getElementById("relation")
-.value;
-
+document.getElementById("relation").value;
 
 if(!from || !to){
 
@@ -842,110 +567,87 @@ alert(
 );
 
 return;
+}
+
+showWish(from,to,relation);
+
+updateURL(from,to,relation);
 
 }
 
 
-showWish(
-from,
-to,
-relation
-);
+/* SHOW WISH */
 
-
-updateURL(
-from,
-to,
-relation
-);
-
-}
-
-
-/* =========================
-   SHOW WISH
-========================= */
-
-function showWish(
-from,
-to,
-relation
-){
+function showWish(from,to,relation){
 
 let arr=
 relation==="brother"
 ? brother
 : sister;
 
-
 let i;
 
 do{
-
-i=
-Math.floor(
-Math.random()*arr.length
-);
-
+i=Math.floor(Math.random()*arr.length);
 }
-while(
-arr.length>1 &&
-i===last
-);
-
+while(arr.length>1 && i===last);
 
 last=i;
-
 current=arr[i];
-
-
-/*
-भाई है → प्रिय बहन
-बहन है → प्रिय भाई
-*/
 
 let defaultReceiver=
 relation==="brother"
 ? "बहन"
 : "भाई";
 
-
 let receiver=
 to || defaultReceiver;
 
-
-document.getElementById("name")
-.innerText=
+document.getElementById("name").innerText=
 "प्रिय "+receiver+" ❤️";
 
-
-document.getElementById("wish")
-.innerText=
+document.getElementById("wish").innerText=
 current;
 
 
-/*
-भाई → आपका भाई
-बहन → आपकी बहन
-*/
+/* CUSTOM MESSAGE */
+
+let custom=
+document.getElementById("customMessage")
+.value.trim();
+
+let customBox=
+document.getElementById("customMessageDisplay");
+
+if(custom){
+
+customBox.innerText=custom;
+
+customBox.style.display="block";
+
+}else{
+
+customBox.innerText="";
+
+customBox.style.display="none";
+
+}
+
+
+/* SIGNATURE */
 
 let signature=
 relation==="brother"
 ? "आपका भाई ❤️"
 : "आपकी बहन ❤️";
 
-
-document.getElementById("sign")
-.innerText=
+document.getElementById("sign").innerText=
 signature;
-
 
 document.getElementById("result")
 .style.display="block";
 
-
 applyDesign();
-
 
 document.getElementById("result")
 .scrollIntoView({
@@ -955,9 +657,7 @@ behavior:"smooth"
 }
 
 
-/* =========================
-   SURPRISE ME
-========================= */
+/* SURPRISE */
 
 function surpriseMe(){
 
@@ -966,105 +666,63 @@ Math.random()>0.5
 ? "brother"
 : "sister";
 
+document.getElementById("from").value="";
 
-document.getElementById("from")
-.value="";
+document.getElementById("to").value="";
 
+document.getElementById("customMessage").value="";
 
-document.getElementById("to")
-.value="";
-
-
-document.getElementById("relation")
-.value=relation;
-
-
-/* Random design */
+document.getElementById("relation").value=
+relation;
 
 design=
-Math.floor(
-Math.random()*5
-)+1;
+Math.floor(Math.random()*5)+1;
 
+document.getElementById("photo").style.display="none";
 
-/* Remove photo */
+document.getElementById("photoInput").value="";
 
-document.getElementById("photo")
-.style.display="none";
-
-document.getElementById("photoInput")
-.value="";
-
-
-/* Generate card */
-
-showWish(
-"",
-"",
-relation
-);
+showWish("","",relation);
 
 }
 
 
-/* =========================
-   NEW WISH
-========================= */
+/* NEW WISH */
 
 function newWish(){
 
 let from=
-document.getElementById("from")
-.value.trim();
+document.getElementById("from").value.trim();
 
 let to=
-document.getElementById("to")
-.value.trim();
+document.getElementById("to").value.trim();
 
 let relation=
-document.getElementById("relation")
-.value;
-
+document.getElementById("relation").value;
 
 if(!from || !to){
 
 alert("पहले नाम लिखें ❤️");
 
 return;
+}
+
+showWish(from,to,relation);
+
+updateURL(from,to,relation);
 
 }
 
 
-showWish(
-from,
-to,
-relation
-);
-
-
-updateURL(
-from,
-to,
-relation
-);
-
-}
-
-
-/* =========================
-   WHATSAPP SHARE
-========================= */
+/* WHATSAPP */
 
 function share(){
 
 let to=
-document.getElementById("to")
-.value.trim();
+document.getElementById("to").value.trim();
 
 let relation=
-document.getElementById("relation")
-.value;
-
+document.getElementById("relation").value;
 
 let receiver=
 to ||
@@ -1074,10 +732,7 @@ relation==="brother"
 : "भाई"
 );
 
-
-let link=
-location.href;
-
+let link=location.href;
 
 let text=
 `🎀 शुभ रक्षाबंधन 🎀
@@ -1092,7 +747,6 @@ ${link}
 
 ❤️ शुभ रक्षाबंधन ❤️`;
 
-
 window.open(
 "https://wa.me/?text="+
 encodeURIComponent(text),
@@ -1102,20 +756,19 @@ encodeURIComponent(text),
 }
 
 
-/* =========================
-   COPY WISH
-========================= */
+/* COPY */
 
 function copyWish(){
 
 let to=
-document.getElementById("to")
-.value.trim();
+document.getElementById("to").value.trim();
 
 let relation=
-document.getElementById("relation")
-.value;
+document.getElementById("relation").value;
 
+let custom=
+document.getElementById("customMessage")
+.value.trim();
 
 let receiver=
 to ||
@@ -1125,39 +778,30 @@ relation==="brother"
 : "भाई"
 );
 
-
 let signature=
 relation==="brother"
 ? "आपका भाई ❤️"
 : "आपकी बहन ❤️";
-
 
 let text=
 `🎀 शुभ रक्षाबंधन 🎀
 
 प्रिय ${receiver} ❤️
 
-${current}
+${custom ? custom+"\n\n" : ""}${current}
 
 ${signature}`;
 
-
-navigator.clipboard
-.writeText(text)
-.then(
+navigator.clipboard.writeText(text).then(
 function(){
-
 alert("Wish कॉपी हो गई ❤️");
-
 }
 );
 
 }
 
 
-/* =========================
-   PHOTO
-========================= */
+/* PHOTO */
 
 document
 .getElementById("photoInput")
@@ -1169,17 +813,12 @@ const file=this.files[0];
 
 if(!file)return;
 
+const reader=new FileReader();
 
-const reader=
-new FileReader();
-
-
-reader.onload=
-function(e){
+reader.onload=function(e){
 
 const img=
 document.getElementById("photo");
-
 
 img.src=e.target.result;
 
@@ -1187,28 +826,21 @@ img.style.display="block";
 
 };
 
-
 reader.readAsDataURL(file);
 
 }
 );
 
 
-/* =========================
-   DOWNLOAD CARD
-========================= */
+/* DOWNLOAD */
 
 function downloadCard(){
 
-const card=
-document.getElementById("card");
+const card=document.getElementById("card");
 
-const loading=
-document.getElementById("loading");
-
+const loading=document.getElementById("loading");
 
 loading.style.display="block";
-
 
 function capture(){
 
@@ -1220,66 +852,42 @@ backgroundColor:"#fffdf1",
 useCORS:true
 }
 )
-.then(
-function(canvas){
+.then(function(canvas){
 
-let link=
-document.createElement("a");
-
+let link=document.createElement("a");
 
 link.download=
 "Raksha-Bandhan-Card.png";
 
-
 link.href=
-canvas.toDataURL(
-"image/png"
-);
-
+canvas.toDataURL("image/png");
 
 link.click();
 
-
 loading.style.display="none";
 
-}
-);
+});
 
 }
 
+if(typeof html2canvas==="undefined"){
 
-if(
-typeof html2canvas===
-"undefined"
-){
-
-let script=
-document.createElement("script");
-
+let script=document.createElement("script");
 
 script.src=
 "https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js";
 
+script.onload=capture;
 
-script.onload=
-capture;
-
-
-script.onerror=
-function(){
+script.onerror=function(){
 
 loading.style.display="none";
 
-alert(
-"Download नहीं हो पाया।"
-);
+alert("Download नहीं हो पाया।");
 
 };
 
-
-document.body
-.appendChild(script);
-
+document.body.appendChild(script);
 
 }else{
 
@@ -1290,94 +898,49 @@ capture();
 }
 
 
-/* =========================
-   URL
-========================= */
+/* URL */
 
-function updateURL(
-from,
-to,
-relation
-){
+function updateURL(from,to,relation){
 
-if(!from || !to){
-
-return;
-
-}
-
+if(!from || !to)return;
 
 history.replaceState(
 null,
 "",
 location.pathname+
-"?from="+
-encodeURIComponent(from)+
-"&to="+
-encodeURIComponent(to)+
-"&r="+
-encodeURIComponent(relation)+
-"&d="+
-design
+"?from="+encodeURIComponent(from)+
+"&to="+encodeURIComponent(to)+
+"&r="+encodeURIComponent(relation)+
+"&d="+design
 );
 
 }
 
 
-/* =========================
-   LOAD SHARED LINK
-========================= */
+/* LOAD SHARED LINK */
 
 function loadFromLink(){
 
 let p=
-new URLSearchParams(
-location.search
-);
+new URLSearchParams(location.search);
 
+let from=p.get("from");
+let to=p.get("to");
+let r=p.get("r");
+let d=parseInt(p.get("d"));
 
-let from=
-p.get("from");
-
-let to=
-p.get("to");
-
-let r=
-p.get("r");
-
-let d=
-parseInt(
-p.get("d")
-);
-
-
-if(
-d>=1 &&
-d<=5
-){
-
+if(d>=1 && d<=5){
 design=d;
-
 }
 
+if(from && to){
 
-if(
-from &&
-to
-){
+document.getElementById("from").value=from;
 
-document.getElementById("from")
-.value=from;
+document.getElementById("to").value=to;
 
-
-document.getElementById("to")
-.value=to;
-
-
-document.getElementById("relation")
-.value=
+document.getElementById("relation").value=
 r || "brother";
-
 
 showWish(
 from,
@@ -1388,7 +951,6 @@ r || "brother"
 }
 
 }
-
 
 loadFromLink();
 
