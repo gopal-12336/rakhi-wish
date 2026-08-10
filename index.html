@@ -1,1 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<title>Happy Raksha Bandhan ❤️</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(135deg,#fff1f8,#ffe5c7,#fff7df);
+    overflow-x:hidden;
+    color:#5a1937;
+}
+
+.container{
+    width:100%;
+    max-width:600px;
+    margin:auto;
+    padding:25px 18px 40px;
+    text-align:center;
+}
+
+/* Floating Hearts */
+.heart{
+    position:fixed;
+    bottom:-30px;
+    font-size:22px;
+    animation:float 7s linear infinite;
+    opacity:.7;
+    pointer-events:none;
+}
+
+@keyframes float{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+    20%{opacity:1;}
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+.badge{
+    display:inline-block;
+    background:#fff;
+    padding:8px 18px;
+    border-radius:30px;
+    box-shadow:0 5px 20px rgba(0,0,0,.08);
+    font-size:14px;
+    margin-bottom:18px;
+}
+
+h1{
+    font-size:42px;
+    line-height:1.1;
+    margin-bottom:10px;
+}
+
+.subtitle{
+    font-size:17px;
+    line-height:1.6;
+    color:#7b4058;
+    margin-bottom:25px;
+}
+
+.rakhi{
+    font-size:90px;
+    animation:pulse 2s infinite;
+    margin:10px 0 20px;
+}
+
+@keyframes pulse{
+    0%,100%{transform:scale(1);}
+    50%{transform:scale(1.08);}
+}
+
+.card{
+    background:rgba(255,255,255,.88);
+    border-radius:25px;
+    padding:25px 20px;
+    box-shadow:0 15px 40px rgba(120,30,70,.12);
+    backdrop-filter:blur(8px);
+}
+
+label{
+    display:block;
+    text-align:left;
+    font-weight:bold;
+    margin:14px 0 7px;
+}
+
+input,select{
+    width:100%;
+    padding:14px;
+    border:2px solid #f2d4df;
+    border-radius:12px;
+    outline:none;
+    font-size:16px;
+    background:#fff;
+}
+
+input:focus,select:focus{
+    border-color:#d94c7c;
+}
+
+button{
+    width:100%;
+    border:none;
+    padding:15px;
+    border-radius:14px;
+    font-size:17px;
+    font-weight:bold;
+    cursor:pointer;
+    margin-top:20px;
+}
+
+.create-btn{
+    background:linear-gradient(135deg,#d9366b,#ef7b45);
+    color:white;
+    box-shadow:0 8px 20px rgba(217,54,107,.25);
+}
+
+.result{
+    display:none;
+    margin-top:25px;
+    background:linear-gradient(145deg,#fff,#fff4f8);
+    border:2px solid #f4c9d8;
+    border-radius:22px;
+    padding:25px 18px;
+}
+
+.result h2{
+    font-size:28px;
+    margin-bottom:12px;
+}
+
+.wish{
+    font-size:18px;
+    line-height:1.7;
+    margin:15px 0;
+}
+
+.share-btn{
+    background:#25D366;
+    color:white;
+}
+
+.copy-btn{
+    background:#5b4bc4;
+    color:white;
+}
+
+.reset-btn{
+    background:#f1e6eb;
+    color:#5a1937;
+}
+
+.footer{
+    margin-top:30px;
+    font-size:13px;
+    color:#89556b;
+}
+
+@media(max-width:450px){
+    h1{
+        font-size:34px;
+    }
+
+    .rakhi{
+        font-size:75px;
+    }
+
+    .subtitle{
+        font-size:15px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="badge">🎀 A Special Raksha Bandhan</div>
+
+    <div class="rakhi">🪢</div>
+
+    <h1>Happy Raksha Bandhan ❤️</h1>
+
+    <p class="subtitle">
+        Apne special bhai ya behen ke liye<br>
+        ek beautiful Rakhi wish banaiye ✨
+    </p>
+
+    <div class="card">
+
+        <label>Your Name</label>
+        <input id="yourName" type="text" placeholder="Apna naam likhiye">
+
+        <label>Brother / Sister Name</label>
+        <input id="otherName" type="text" placeholder="Bhai ya behen ka naam">
+
+        <label>Relationship</label>
+        <select id="relation">
+            <option value="Brother">Brother ❤️</option>
+            <option value="Sister">Sister ❤️</option>
+        </select>
+
+        <button class="create-btn" onclick="createWish()">
+            ✨ Create My Rakhi Wish
+        </button>
+
+    </div>
+
+    <div class="result" id="result">
+
+        <div style="font-size:55px;">🎀❤️</div>
+
+        <h2 id="resultTitle"></h2>
+
+        <div class="wish" id="wishText"></div>
+
+        <div style="font-size:35px;">🪔 🌸 🪔</div>
+
+        <button class="share-btn" onclick="shareWhatsApp()">
+            📲 Share on WhatsApp
+        </button>
+
+        <button class="copy-btn" onclick="copyWish()">
+            📋 Copy Wish
+        </button>
+
+        <button class="reset-btn" onclick="resetWish()">
+            🔄 Create Another Wish
+        </button>
+
+    </div>
+
+    <div class="footer">
+        Made with ❤️ for the beautiful bond of siblings
+    </div>
+
+</div>
+
+<script>
+
+let finalWish = "";
+
+function createWish(){
+
+    const yourName = document.getElementById("yourName").value.trim();
+    const otherName = document.getElementById("otherName").value.trim();
+    const relation = document.getElementById("relation").value;
+
+    if(yourName === "" || otherName === ""){
+        alert("Please dono naam enter kijiye ❤️");
+        return;
+    }
+
+    let message = "";
+
+    if(relation === "Brother"){
+
+        message =
+        `Dear ${otherName} ❤️
+
+Happy Raksha Bandhan!
+
+Bhai-behen ka rishta duniya ke sabse beautiful rishton mein se ek hai.
+
+Hamesha khush raho, smile karte raho aur hamari ye beautiful bonding hamesha aisi hi bani rahe. 🥰
+
+Lots of love ❤️
+
+From ${yourName} 🎀`;
+
+    }else{
+
+        message =
+        `Dear ${otherName} ❤️
+
+Happy Raksha Bandhan!
+
+Tum sirf meri behen nahi, meri best friend bhi ho. 🥰
+
+Life mein chahe kitni bhi problems aayein, hamari bonding hamesha special rahegi.
+
+Hamesha khush raho aur smile karti raho. 🌸
+
+Lots of love ❤️
+
+From ${yourName} 🎀`;
+    }
+
+    finalWish = message;
+
+    document.getElementById("resultTitle").innerText =
+        `${otherName}, This Wish Is For You ❤️`;
+
+    document.getElementById("wishText").innerText = message;
+
+    document.getElementById("result").style.display = "block";
+
+    document.getElementById("result").scrollIntoView({
+        behavior:"smooth"
+    });
+
+    createHearts();
+}
+
+function shareWhatsApp(){
+
+    const text =
+    finalWish +
+    "\n\n🎀 Create your own Rakhi Wish ❤️";
+
+    const url =
+    "https://wa.me/?text=" +
+    encodeURIComponent(text);
+
+    window.open(url,"_blank");
+}
+
+function copyWish(){
+
+    navigator.clipboard.writeText(finalWish)
+    .then(function(){
+
+        alert("Wish copied successfully ❤️");
+
+    })
+    .catch(function(){
+
+        alert("Copy nahi ho paya. Please manually copy karein.");
+
+    });
+}
+
+function resetWish(){
+
+    document.getElementById("result").style.display = "none";
+
+    document.getElementById("yourName").value = "";
+    document.getElementById("otherName").value = "";
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
+    });
+}
+
+function createHearts(){
+
+    for(let i=0;i<15;i++){
+
+        const heart = document.createElement("div");
+
+        heart.className = "heart";
+
+        heart.innerText =
+            ["❤️","💖","🌸","✨","🎀"][Math.floor(Math.random()*5)];
+
+        heart.style.left =
+            Math.random()*100 + "vw";
+
+        heart.style.animationDuration =
+            (4 + Math.random()*4) + "s";
+
+        document.body.appendChild(heart);
+
+        setTimeout(()=>{
+            heart.remove();
+        },8000);
+    }
+}
+
+</script>
+
+</body>
+</html>
