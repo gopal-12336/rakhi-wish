@@ -3,10 +3,16 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>शुभ रक्षाबंधन ❤️</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
+
+*{
+box-sizing:border-box;
+margin:0;
+padding:0
+}
 
 body{
 font-family:Arial,"Noto Sans Devanagari",sans-serif;
@@ -14,15 +20,87 @@ min-height:100vh;
 text-align:center;
 color:#641a3b;
 background:linear-gradient(135deg,#fff0f6,#ffe6c9,#fff9df);
-padding:20px 12px
+padding:20px 12px;
+overflow-x:hidden
 }
 
-.wrap{max-width:650px;margin:auto}
+.wrap{
+max-width:650px;
+margin:auto;
+position:relative;
+z-index:2
+}
+
+/* FESTIVE ANIMATION */
+
+.floating{
+position:fixed;
+top:-40px;
+font-size:24px;
+pointer-events:none;
+z-index:1;
+animation:fall linear forwards;
+opacity:.85
+}
+
+@keyframes fall{
+
+0%{
+transform:translateY(-50px) rotate(0deg);
+opacity:0
+}
+
+10%{
+opacity:1
+}
+
+100%{
+transform:translateY(110vh) rotate(360deg);
+opacity:0
+}
+
+}
+
+.glow{
+animation:glow 2s infinite alternate
+}
+
+@keyframes glow{
+
+from{
+text-shadow:0 0 5px #ff8aa8
+}
+
+to{
+text-shadow:
+0 0 10px #ff5b88,
+0 0 25px #ff9db8
+}
+
+}
+
+.rakhi{
+font-size:65px;
+animation:rakhi 2s infinite ease-in-out;
+display:inline-block
+}
+
+@keyframes rakhi{
+
+0%,100%{
+transform:rotate(-5deg) scale(1)
+}
+
+50%{
+transform:rotate(5deg) scale(1.08)
+}
+
+}
 
 h1{
 font-size:40px;
 color:#b21f50;
-margin:12px 0
+margin:8px 0 12px
 }
 
 .sub{
@@ -32,10 +110,11 @@ margin-bottom:20px
 }
 
 .box{
-background:#fff;
+background:#ffffffee;
 padding:22px;
 border-radius:22px;
-box-shadow:0 10px 35px #8b315020
+box-shadow:0 10px 35px #8b315020;
+backdrop-filter:blur(5px)
 }
 
 input,select{
@@ -44,7 +123,13 @@ padding:14px;
 margin:8px 0 12px;
 border:2px solid #efd1dc;
 border-radius:12px;
-font-size:16px
+font-size:16px;
+outline:none
+}
+
+input:focus,select:focus{
+border-color:#c92862;
+box-shadow:0 0 8px #c9286230
 }
 
 button{
@@ -55,7 +140,13 @@ border:0;
 border-radius:12px;
 font-size:16px;
 font-weight:bold;
-cursor:pointer
+cursor:pointer;
+transition:.2s
+}
+
+button:hover{
+transform:translateY(-2px);
+box-shadow:0 6px 15px #6b183530
 }
 
 .main{
@@ -118,6 +209,7 @@ margin-top:25px
 .frame{
 padding:10px;
 border-radius:24px;
+
 background:linear-gradient(
 135deg,
 #b77a16,
@@ -126,7 +218,10 @@ background:linear-gradient(
 #fff0a0,
 #b77a16
 );
-box-shadow:0 15px 40px #63243b35
+
+box-shadow:
+0 15px 40px #63243b35,
+0 0 25px #e8a63d55
 }
 
 .inner{
@@ -288,7 +383,12 @@ font-size:22px
 font-size:16px
 }
 
+.rakhi{
+font-size:55px
 }
+
+}
+
 </style>
 </head>
 
@@ -297,17 +397,17 @@ font-size:16px
 
 <div class="wrap">
 
-<div style="font-size:55px">
-🎀
+<div class="rakhi">
+🪢
 </div>
 
-<h1>
+<h1 class="glow">
 शुभ रक्षाबंधन ❤️
 </h1>
 
 <p class="sub">
 अपने भाई या बहन के लिए<br>
-अपनी पसंद का खूबसूरत कार्ड बनाएं ✨
+एक खूबसूरत Rakhi Wish Card बनाएं ✨
 </p>
 
 
@@ -315,23 +415,24 @@ font-size:16px
 
 <input
 id="from"
-placeholder="आपका नाम"
+placeholder="अपना नाम लिखें"
 >
+
 
 <input
 id="to"
-placeholder="भाई / बहन का नाम"
+placeholder="भाई / बहन का नाम लिखें"
 >
 
 
 <select id="relation">
 
 <option value="brother">
-भाई ❤️
+मैं भाई हूँ 👦
 </option>
 
 <option value="sister">
-बहन ❤️
+मैं बहन हूँ 👧
 </option>
 
 </select>
@@ -351,7 +452,9 @@ accept="image/*"
 
 
 <p style="font-weight:bold;margin:8px">
+
 🎨 Card Design चुनें
+
 </p>
 
 
@@ -384,7 +487,9 @@ accept="image/*"
 class="main"
 onclick="makeWish()"
 >
+
 ✨ शुभकामना बनाएं
+
 </button>
 
 
@@ -392,10 +497,14 @@ onclick="makeWish()"
 class="blue"
 onclick="surpriseMe()"
 >
+
 🎁 मुझे Surprise करें
+
 </button>
 
+
 </div>
+
 
 
 <div
@@ -413,13 +522,16 @@ id="card"
 
 <div class="inner">
 
+
 <div>
 🪔 शुभ रक्षाबंधन 🪔
 </div>
 
 
 <div class="title">
+
 🎀 राखी की शुभकामनाएं 🎀
+
 </div>
 
 
@@ -447,22 +559,30 @@ id="sign"
 ></div>
 
 
-<div style="font-size:25px;margin-top:18px">
+<div
+style="font-size:25px;margin-top:18px"
+>
+
 🌸 🪢 🌸
+
 </div>
+
 
 </div>
 
 </div>
 
 </div>
+
 
 
 <button
 class="green"
 onclick="share()"
 >
+
 📲 WhatsApp पर शेयर करें
+
 </button>
 
 
@@ -470,7 +590,9 @@ onclick="share()"
 class="gold"
 onclick="newWish()"
 >
+
 🔄 नई शुभकामना
+
 </button>
 
 
@@ -478,7 +600,9 @@ onclick="newWish()"
 class="blue"
 onclick="copyWish()"
 >
+
 📋 कॉपी करें
+
 </button>
 
 
@@ -486,7 +610,9 @@ onclick="copyWish()"
 class="gold"
 onclick="downloadCard()"
 >
+
 🖼️ कार्ड डाउनलोड करें
+
 </button>
 
 
@@ -494,10 +620,14 @@ onclick="downloadCard()"
 class="loading"
 id="loading"
 >
+
 ⏳ कार्ड तैयार हो रहा है...
-</div>
 
 </div>
+
+
+</div>
+
 
 
 <p class="small">
@@ -510,6 +640,7 @@ Made with ❤️ for Raksha Bandhan
 
 </p>
 
+
 </div>
 
 
@@ -518,10 +649,103 @@ Made with ❤️ for Raksha Bandhan
 
 
 /* =========================
-   WISHES
+   FESTIVE FLOATING EFFECT
+========================= */
+
+const festiveItems=[
+"🌸",
+"🌺",
+"❤️",
+"💖",
+"✨",
+"🎀",
+"🪢",
+"🌼"
+];
+
+
+function createFloating(){
+
+const item=
+document.createElement("div");
+
+item.className="floating";
+
+item.innerText=
+festiveItems[
+Math.floor(
+Math.random()*festiveItems.length
+)
+];
+
+item.style.left=
+Math.random()*100+"vw";
+
+item.style.animationDuration=
+(5+Math.random()*5)+"s";
+
+item.style.fontSize=
+(16+Math.random()*18)+"px";
+
+document.body.appendChild(item);
+
+
+setTimeout(
+()=>{
+item.remove();
+},
+10000
+);
+
+}
+
+
+setInterval(
+createFloating,
+700
+);
+
+
+/* =========================
+   BROTHER WISHES
 ========================= */
 
 const brother=[
+
+`बहन, इस रक्षाबंधन पर मेरी यही दुआ है कि तुम्हारी जिंदगी हमेशा खुशियों से भरी रहे।
+
+तुम हमेशा मुस्कुराती रहो और अपने हर सपने को पूरा करो। ❤️`,
+
+`प्यारी बहन, बचपन की शरारतों से लेकर आज तक हमारा रिश्ता हमेशा खास रहा है।
+
+ईश्वर तुम्हें जीवन की हर खुशी दे।
+
+शुभ रक्षाबंधन! 🎀`,
+
+`कभी लड़ाई, कभी मजाक और कभी प्यार...
+
+इन्हीं यादों से हमारा रिश्ता इतना खूबसूरत है।
+
+मेरी प्यारी बहन को रक्षाबंधन की ढेर सारी शुभकामनाएं। ❤️`,
+
+`इस राखी पर तुम्हारी कलाई पर सिर्फ धागा नहीं, बल्कि मेरी ढेर सारी शुभकामनाएं बंधी हैं।
+
+हमेशा खुश रहो बहन। 🌸`,
+
+`बहन-भाई का रिश्ता जिंदगी के सबसे खूबसूरत रिश्तों में से एक है।
+
+हमारी यह प्यारी bonding हमेशा ऐसी ही बनी रहे।
+
+शुभ रक्षाबंधन बहन! ❤️`
+
+];
+
+
+/* =========================
+   SISTER WISHES
+========================= */
+
+const sister=[
 
 `भाई, इस रक्षाबंधन पर मेरी यही दुआ है कि तुम्हारी जिंदगी हमेशा खुशियों से भरी रहे।
 
@@ -548,33 +772,6 @@ const brother=[
 हमारी यह प्यारी bonding हमेशा ऐसी ही बनी रहे।
 
 शुभ रक्षाबंधन भाई! ❤️`
-
-];
-
-
-const sister=[
-
-`प्यारी बहन, इस रक्षाबंधन पर मेरी यही दुआ है कि तुम्हारी जिंदगी हमेशा खुशियों से भरी रहे।
-
-तुम हमेशा मुस्कुराती रहो। ❤️`,
-
-`तुम सिर्फ मेरी बहन नहीं, मेरी सबसे अच्छी दोस्त भी हो।
-
-तुम्हारे साथ बिताया हर पल मेरे लिए खास है।
-
-शुभ रक्षाबंधन! 🌸`,
-
-`हमारी छोटी-छोटी लड़ाइयां, मस्ती और यादें ही हमारे रिश्ते को खास बनाती हैं।
-
-मेरी प्यारी बहन को रक्षाबंधन की बहुत सारी शुभकामनाएं। 🎀`,
-
-`ईश्वर तुम्हारे हर सपने को पूरा करे और तुम्हें जिंदगी की हर खुशी मिले।
-
-मेरी प्यारी बहन को शुभ रक्षाबंधन! ❤️`,
-
-`रिश्ते बहुत होते हैं जिंदगी में, लेकिन भाई-बहन का रिश्ता सबसे अनमोल होता है।
-
-मेरी प्यारी बहन को रक्षाबंधन की ढेर सारी शुभकामनाएं। 🪢🌸`
 
 ];
 
@@ -626,18 +823,23 @@ card.classList.add("d"+design);
 function makeWish(){
 
 let from=
-document.getElementById("from").value.trim();
+document.getElementById("from")
+.value.trim();
 
 let to=
-document.getElementById("to").value.trim();
+document.getElementById("to")
+.value.trim();
 
 let relation=
-document.getElementById("relation").value;
+document.getElementById("relation")
+.value;
 
 
 if(!from || !to){
 
-alert("कृपया दोनों नाम लिखें ❤️");
+alert(
+"कृपया अपना नाम और सामने वाले का नाम लिखें ❤️"
+);
 
 return;
 
@@ -686,7 +888,6 @@ Math.random()*arr.length
 );
 
 }
-
 while(
 arr.length>1 &&
 i===last
@@ -698,9 +899,24 @@ last=i;
 current=arr[i];
 
 
+/*
+भाई है → प्रिय बहन
+बहन है → प्रिय भाई
+*/
+
+let defaultReceiver=
+relation==="brother"
+? "बहन"
+: "भाई";
+
+
+let receiver=
+to || defaultReceiver;
+
+
 document.getElementById("name")
 .innerText=
-"प्रिय "+to+" ❤️";
+"प्रिय "+receiver+" ❤️";
 
 
 document.getElementById("wish")
@@ -708,9 +924,20 @@ document.getElementById("wish")
 current;
 
 
+/*
+भाई → आपका भाई
+बहन → आपकी बहन
+*/
+
+let signature=
+relation==="brother"
+? "आपका भाई ❤️"
+: "आपकी बहन ❤️";
+
+
 document.getElementById("sign")
 .innerText=
-"प्यार सहित — "+from+" ❤️";
+signature;
 
 
 document.getElementById("result")
@@ -729,27 +956,52 @@ behavior:"smooth"
 
 
 /* =========================
-   URL
+   SURPRISE ME
 ========================= */
 
-function updateURL(
-from,
-to,
-relation
-){
+function surpriseMe(){
 
-history.replaceState(
-null,
+const relation=
+Math.random()>0.5
+? "brother"
+: "sister";
+
+
+document.getElementById("from")
+.value="";
+
+
+document.getElementById("to")
+.value="";
+
+
+document.getElementById("relation")
+.value=relation;
+
+
+/* Random design */
+
+design=
+Math.floor(
+Math.random()*5
+)+1;
+
+
+/* Remove photo */
+
+document.getElementById("photo")
+.style.display="none";
+
+document.getElementById("photoInput")
+.value="";
+
+
+/* Generate card */
+
+showWish(
 "",
-location.pathname+
-"?from="+
-encodeURIComponent(from)+
-"&to="+
-encodeURIComponent(to)+
-"&r="+
-encodeURIComponent(relation)+
-"&d="+
-design
+"",
+relation
 );
 
 }
@@ -800,69 +1052,7 @@ relation
 
 
 /* =========================
-   SURPRISE ME
-========================= */
-
-function surpriseMe(){
-
-/*
-   Random name की जगह
-   केवल प्रिय भाई / प्रिय बहन
-*/
-
-const relation =
-Math.random() > 0.5
-? "brother"
-: "sister";
-
-
-const from =
-"आपका अपना";
-
-
-const to =
-relation === "brother"
-? "प्रिय भाई"
-: "प्रिय बहन";
-
-
-document.getElementById("from")
-.value=from;
-
-
-document.getElementById("to")
-.value=to;
-
-
-document.getElementById("relation")
-.value=relation;
-
-
-/* Random design */
-
-design=
-Math.floor(
-Math.random()*5
-)+1;
-
-
-/* Photo हटाएं */
-
-document.getElementById("photo")
-.style.display="none";
-
-
-document.getElementById("photoInput")
-.value="";
-
-
-makeWish();
-
-}
-
-
-/* =========================
-   WHATSAPP
+   WHATSAPP SHARE
 ========================= */
 
 function share(){
@@ -870,6 +1060,19 @@ function share(){
 let to=
 document.getElementById("to")
 .value.trim();
+
+let relation=
+document.getElementById("relation")
+.value;
+
+
+let receiver=
+to ||
+(
+relation==="brother"
+? "बहन"
+: "भाई"
+);
 
 
 let link=
@@ -879,7 +1082,7 @@ location.href;
 let text=
 `🎀 शुभ रक्षाबंधन 🎀
 
-${to} ❤️
+प्रिय ${receiver} ❤️
 
 आपके लिए एक खास Rakhi Card बनाया गया है।
 
@@ -900,36 +1103,52 @@ encodeURIComponent(text),
 
 
 /* =========================
-   COPY
+   COPY WISH
 ========================= */
 
 function copyWish(){
-
-let from=
-document.getElementById("from")
-.value.trim();
 
 let to=
 document.getElementById("to")
 .value.trim();
 
+let relation=
+document.getElementById("relation")
+.value;
+
+
+let receiver=
+to ||
+(
+relation==="brother"
+? "बहन"
+: "भाई"
+);
+
+
+let signature=
+relation==="brother"
+? "आपका भाई ❤️"
+: "आपकी बहन ❤️";
+
 
 let text=
 `🎀 शुभ रक्षाबंधन 🎀
 
-${to} ❤️
+प्रिय ${receiver} ❤️
 
 ${current}
 
-प्यार सहित —
-${from} ❤️`;
+${signature}`;
 
 
 navigator.clipboard
 .writeText(text)
 .then(
-()=>{
+function(){
+
 alert("Wish कॉपी हो गई ❤️");
+
 }
 );
 
@@ -955,7 +1174,8 @@ const reader=
 new FileReader();
 
 
-reader.onload=function(e){
+reader.onload=
+function(e){
 
 const img=
 document.getElementById("photo");
@@ -975,7 +1195,7 @@ reader.readAsDataURL(file);
 
 
 /* =========================
-   DOWNLOAD
+   DOWNLOAD CARD
 ========================= */
 
 function downloadCard(){
@@ -1071,6 +1291,40 @@ capture();
 
 
 /* =========================
+   URL
+========================= */
+
+function updateURL(
+from,
+to,
+relation
+){
+
+if(!from || !to){
+
+return;
+
+}
+
+
+history.replaceState(
+null,
+"",
+location.pathname+
+"?from="+
+encodeURIComponent(from)+
+"&to="+
+encodeURIComponent(to)+
+"&r="+
+encodeURIComponent(relation)+
+"&d="+
+design
+);
+
+}
+
+
+/* =========================
    LOAD SHARED LINK
 ========================= */
 
@@ -1082,11 +1336,14 @@ location.search
 );
 
 
-let from=p.get("from");
+let from=
+p.get("from");
 
-let to=p.get("to");
+let to=
+p.get("to");
 
-let r=p.get("r");
+let r=
+p.get("r");
 
 let d=
 parseInt(
@@ -1104,7 +1361,10 @@ design=d;
 }
 
 
-if(from && to){
+if(
+from &&
+to
+){
 
 document.getElementById("from")
 .value=from;
@@ -1131,7 +1391,6 @@ r || "brother"
 
 
 loadFromLink();
-
 
 </script>
 
