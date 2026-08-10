@@ -1,155 +1,265 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="hi">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Happy Raksha Bandhan ❤️</title>
+<title>शुभ रक्षाबंधन ❤️</title>
 
 <style>
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    font-family:Arial, sans-serif;
 }
 
 body{
     min-height:100vh;
-    background:linear-gradient(135deg,#fff1f8,#ffe5c7,#fff7df);
+    font-family:"Noto Sans Devanagari","Mangal",Arial,sans-serif;
+    background:
+        radial-gradient(circle at top,#fff9df 0%,transparent 35%),
+        linear-gradient(135deg,#fff0f5,#ffe4c4,#fff8df);
+    color:#651a3b;
     overflow-x:hidden;
-    color:#5a1937;
 }
 
-.container{
-    width:100%;
-    max-width:600px;
-    margin:auto;
-    padding:25px 18px 40px;
-    text-align:center;
-}
+/* Floating decoration */
 
-/* Floating Hearts */
-.heart{
+.floating{
     position:fixed;
-    bottom:-30px;
-    font-size:22px;
-    animation:float 7s linear infinite;
-    opacity:.7;
+    bottom:-50px;
+    font-size:25px;
     pointer-events:none;
+    animation:floatUp linear forwards;
+    z-index:1;
 }
 
-@keyframes float{
+@keyframes floatUp{
     0%{
         transform:translateY(0) rotate(0deg);
         opacity:0;
     }
-    20%{opacity:1;}
+
+    15%{
+        opacity:1;
+    }
+
     100%{
         transform:translateY(-110vh) rotate(360deg);
         opacity:0;
     }
 }
 
+/* Main */
+
+.container{
+    width:100%;
+    max-width:650px;
+    margin:auto;
+    padding:25px 15px 45px;
+    text-align:center;
+    position:relative;
+    z-index:2;
+}
+
 .badge{
     display:inline-block;
-    background:#fff;
+    background:#ffffff;
     padding:8px 18px;
     border-radius:30px;
-    box-shadow:0 5px 20px rgba(0,0,0,.08);
     font-size:14px;
-    margin-bottom:18px;
+    box-shadow:0 5px 20px rgba(100,20,50,.10);
+    margin-bottom:15px;
+}
+
+.rakhi-icon{
+    font-size:75px;
+    margin:5px 0 10px;
+    animation:pulse 2s infinite;
+}
+
+@keyframes pulse{
+    0%,100%{
+        transform:scale(1);
+    }
+
+    50%{
+        transform:scale(1.1);
+    }
 }
 
 h1{
     font-size:42px;
-    line-height:1.1;
-    margin-bottom:10px;
+    margin-bottom:8px;
+    background:linear-gradient(90deg,#a7194b,#e66b37);
+    -webkit-background-clip:text;
+    color:transparent;
 }
 
 .subtitle{
     font-size:17px;
-    line-height:1.6;
+    line-height:1.7;
     color:#7b4058;
     margin-bottom:25px;
 }
 
-.rakhi{
-    font-size:90px;
-    animation:pulse 2s infinite;
-    margin:10px 0 20px;
-}
+/* Input Card */
 
-@keyframes pulse{
-    0%,100%{transform:scale(1);}
-    50%{transform:scale(1.08);}
-}
-
-.card{
-    background:rgba(255,255,255,.88);
-    border-radius:25px;
+.input-card{
+    background:rgba(255,255,255,.90);
     padding:25px 20px;
-    box-shadow:0 15px 40px rgba(120,30,70,.12);
-    backdrop-filter:blur(8px);
+    border-radius:25px;
+    box-shadow:0 15px 40px rgba(120,30,70,.13);
+    border:1px solid rgba(255,255,255,.8);
 }
 
 label{
     display:block;
-    text-align:left;
+    text-align:right;
     font-weight:bold;
     margin:14px 0 7px;
 }
 
-input,select{
+input,
+select{
     width:100%;
     padding:14px;
-    border:2px solid #f2d4df;
-    border-radius:12px;
+    border:2px solid #f0d1dc;
+    border-radius:13px;
     outline:none;
     font-size:16px;
     background:#fff;
+    font-family:inherit;
 }
 
-input:focus,select:focus{
+input:focus,
+select:focus{
     border-color:#d94c7c;
 }
 
 button{
     width:100%;
-    border:none;
     padding:15px;
+    border:none;
     border-radius:14px;
     font-size:17px;
     font-weight:bold;
     cursor:pointer;
-    margin-top:20px;
+    margin-top:18px;
+    font-family:inherit;
 }
 
 .create-btn{
-    background:linear-gradient(135deg,#d9366b,#ef7b45);
     color:white;
-    box-shadow:0 8px 20px rgba(217,54,107,.25);
+    background:linear-gradient(135deg,#c92862,#ed7544);
+    box-shadow:0 8px 22px rgba(200,40,98,.25);
 }
+
+.create-btn:active,
+.share-btn:active,
+.new-btn:active{
+    transform:scale(.98);
+}
+
+/* Wish Area */
 
 .result{
     display:none;
-    margin-top:25px;
-    background:linear-gradient(145deg,#fff,#fff4f8);
-    border:2px solid #f4c9d8;
-    border-radius:22px;
-    padding:25px 18px;
+    margin-top:28px;
 }
 
-.result h2{
-    font-size:28px;
-    margin-bottom:12px;
+/* Beautiful Frame */
+
+.wish-frame{
+    position:relative;
+    padding:12px;
+    border-radius:25px;
+    background:linear-gradient(135deg,#d6a33b,#fff0a7,#c88a20,#fff0a7,#d6a33b);
+    box-shadow:
+        0 15px 45px rgba(100,30,50,.22),
+        inset 0 0 0 2px rgba(255,255,255,.7);
 }
 
-.wish{
-    font-size:18px;
-    line-height:1.7;
+.wish-inner{
+    position:relative;
+    padding:30px 20px;
+    border-radius:17px;
+    background:
+        radial-gradient(circle at center,rgba(255,244,200,.8),transparent 50%),
+        #fffdf3;
+    border:3px solid #a87520;
+    overflow:hidden;
+}
+
+/* Decorative corners */
+
+.corner{
+    position:absolute;
+    font-size:30px;
+}
+
+.c1{
+    top:8px;
+    left:10px;
+}
+
+.c2{
+    top:8px;
+    right:10px;
+}
+
+.c3{
+    bottom:8px;
+    left:10px;
+}
+
+.c4{
+    bottom:8px;
+    right:10px;
+}
+
+.frame-top{
+    font-size:16px;
+    color:#9a6513;
+    font-weight:bold;
+    letter-spacing:1px;
+}
+
+.frame-title{
+    font-size:32px;
+    margin:12px 0;
+    color:#a51f50;
+}
+
+.receiver{
+    font-size:25px;
+    font-weight:bold;
+    color:#7b1b43;
     margin:15px 0;
 }
+
+.wish-text{
+    white-space:pre-line;
+    font-size:18px;
+    line-height:1.9;
+    color:#5d3042;
+    min-height:170px;
+}
+
+.signature{
+    margin-top:18px;
+    font-size:17px;
+    color:#8c3d5c;
+    font-weight:bold;
+}
+
+.frame-bottom{
+    margin-top:20px;
+    font-size:26px;
+}
+
+/* Buttons */
 
 .share-btn{
     background:#25D366;
@@ -161,30 +271,49 @@ button{
     color:white;
 }
 
-.reset-btn{
-    background:#f1e6eb;
-    color:#5a1937;
+.new-btn{
+    background:linear-gradient(135deg,#e4a22b,#f2c95b);
+    color:#572d00;
 }
 
 .footer{
     margin-top:30px;
     font-size:13px;
     color:#89556b;
+    line-height:1.6;
 }
 
-@media(max-width:450px){
+/* Mobile */
+
+@media(max-width:500px){
+
     h1{
         font-size:34px;
     }
 
-    .rakhi{
-        font-size:75px;
+    .rakhi-icon{
+        font-size:65px;
     }
 
     .subtitle{
         font-size:15px;
     }
+
+    .frame-title{
+        font-size:27px;
+    }
+
+    .receiver{
+        font-size:22px;
+    }
+
+    .wish-text{
+        font-size:16px;
+        line-height:1.8;
+    }
+
 }
+
 </style>
 </head>
 
@@ -192,196 +321,569 @@ button{
 
 <div class="container">
 
-    <div class="badge">🎀 A Special Raksha Bandhan</div>
+    <div class="badge">
+        🎀 भाई-बहन के खूबसूरत रिश्ते के नाम 🎀
+    </div>
 
-    <div class="rakhi">🪢</div>
+    <div class="rakhi-icon">
+        🪢
+    </div>
 
-    <h1>Happy Raksha Bandhan ❤️</h1>
+    <h1>शुभ रक्षाबंधन ❤️</h1>
 
     <p class="subtitle">
-        Apne special bhai ya behen ke liye<br>
-        ek beautiful Rakhi wish banaiye ✨
+        अपने प्यारे भाई या बहन के लिए<br>
+        एक खूबसूरत रक्षाबंधन शुभकामना बनाइए ✨
     </p>
 
-    <div class="card">
 
-        <label>Your Name</label>
-        <input id="yourName" type="text" placeholder="Apna naam likhiye">
+    <!-- INPUT -->
 
-        <label>Brother / Sister Name</label>
-        <input id="otherName" type="text" placeholder="Bhai ya behen ka naam">
+    <div class="input-card">
 
-        <label>Relationship</label>
+        <label>आपका नाम</label>
+
+        <input
+            id="yourName"
+            type="text"
+            placeholder="अपना नाम लिखें"
+        >
+
+
+        <label>भाई / बहन का नाम</label>
+
+        <input
+            id="otherName"
+            type="text"
+            placeholder="भाई या बहन का नाम लिखें"
+        >
+
+
+        <label>रिश्ता चुनें</label>
+
         <select id="relation">
-            <option value="Brother">Brother ❤️</option>
-            <option value="Sister">Sister ❤️</option>
+
+            <option value="Brother">
+                भाई ❤️
+            </option>
+
+            <option value="Sister">
+                बहन ❤️
+            </option>
+
         </select>
 
-        <button class="create-btn" onclick="createWish()">
-            ✨ Create My Rakhi Wish
+
+        <button
+            class="create-btn"
+            onclick="createWish()"
+        >
+            ✨ शुभकामना बनाएं
         </button>
 
     </div>
 
-    <div class="result" id="result">
 
-        <div style="font-size:55px;">🎀❤️</div>
+    <!-- RESULT -->
 
-        <h2 id="resultTitle"></h2>
+    <div
+        class="result"
+        id="result"
+    >
 
-        <div class="wish" id="wishText"></div>
+        <div class="wish-frame">
 
-        <div style="font-size:35px;">🪔 🌸 🪔</div>
+            <div class="wish-inner">
 
-        <button class="share-btn" onclick="shareWhatsApp()">
-            📲 Share on WhatsApp
+                <div class="corner c1">🌸</div>
+                <div class="corner c2">🌸</div>
+                <div class="corner c3">🌺</div>
+                <div class="corner c4">🌺</div>
+
+
+                <div class="frame-top">
+                    🪔 शुभ रक्षाबंधन 🪔
+                </div>
+
+
+                <div class="frame-title">
+                    🎀 राखी की शुभकामनाएं 🎀
+                </div>
+
+
+                <div
+                    class="receiver"
+                    id="receiver"
+                >
+                </div>
+
+
+                <div
+                    class="wish-text"
+                    id="wishText"
+                >
+                </div>
+
+
+                <div
+                    class="signature"
+                    id="signature"
+                >
+                </div>
+
+
+                <div class="frame-bottom">
+                    🌸 🪢 🌸
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <button
+            class="share-btn"
+            onclick="shareWhatsApp()"
+        >
+            📲 WhatsApp पर शेयर करें
         </button>
 
-        <button class="copy-btn" onclick="copyWish()">
-            📋 Copy Wish
+
+        <button
+            class="new-btn"
+            onclick="newWish()"
+        >
+            🔄 नई शुभकामना बनाएं
         </button>
 
-        <button class="reset-btn" onclick="resetWish()">
-            🔄 Create Another Wish
+
+        <button
+            class="copy-btn"
+            onclick="copyWish()"
+        >
+            📋 शुभकामना कॉपी करें
         </button>
 
     </div>
+
 
     <div class="footer">
-        Made with ❤️ for the beautiful bond of siblings
+
+        इस रक्षाबंधन अपने भाई या बहन को<br>
+        प्यार और शुभकामनाओं से याद करें ❤️
+
+        <br><br>
+
+        Made with ❤️ for Raksha Bandhan
+
     </div>
 
 </div>
 
+
 <script>
 
-let finalWish = "";
+/* =========================
+   HINDI WISHES
+========================= */
+
+const brotherWishes = [
+
+`भाई, रक्षाबंधन के इस खूबसूरत त्योहार पर
+बस यही दुआ है कि तुम्हारी जिंदगी
+हमेशा खुशियों से भरी रहे।
+
+तुम हमेशा मुस्कुराते रहो,
+सफलता तुम्हारे हर कदम को चूमे
+और हमारा रिश्ता हमेशा ऐसा ही प्यारा बना रहे। ❤️`,
+
+`प्यारे भाई,
+बचपन की शरारतों से लेकर आज तक,
+हमारा रिश्ता हमेशा खास रहा है।
+
+इस रक्षाबंधन पर ईश्वर से यही प्रार्थना है
+कि तुम्हें जिंदगी की हर खुशी मिले
+और तुम्हारे सभी सपने पूरे हों। 🎀❤️`,
+
+`भाई-बहन का रिश्ता दुनिया का
+सबसे प्यारा रिश्ता होता है।
+
+तुम हमेशा खुश रहो,
+स्वस्थ रहो और जीवन में खूब तरक्की करो।
+
+रक्षाबंधन की ढेर सारी शुभकामनाएं भाई! 🌸❤️`,
+
+`कभी लड़ाई,
+कभी मजाक,
+कभी प्यार और कभी नाराजगी...
+
+इन्हीं छोटी-छोटी यादों से
+हमारा रिश्ता इतना खूबसूरत बना है।
+
+मेरे प्यारे भाई को
+रक्षाबंधन की बहुत-बहुत शुभकामनाएं! 🪢❤️`,
+
+`इस राखी पर तुम्हारी कलाई पर
+सिर्फ एक धागा नहीं,
+बल्कि मेरी ढेर सारी शुभकामनाएं बंधी हैं।
+
+हमेशा खुश रहो भाई,
+और जिंदगी में खूब आगे बढ़ो।
+
+शुभ रक्षाबंधन! ❤️`
+];
+
+
+const sisterWishes = [
+
+`प्यारी बहन,
+रक्षाबंधन के इस खास दिन पर
+ईश्वर से यही प्रार्थना है कि
+तुम्हारी जिंदगी हमेशा खुशियों से भरी रहे।
+
+तुम्हारी हर इच्छा पूरी हो
+और तुम्हारे चेहरे की मुस्कान
+हमेशा बनी रहे। ❤️`,
+
+`बहन,
+तुम सिर्फ मेरी बहन नहीं,
+मेरी जिंदगी की एक बहुत खास दोस्त भी हो।
+
+तुम्हारे साथ बिताया हर पल
+मेरे लिए बहुत कीमती है।
+
+रक्षाबंधन की ढेर सारी शुभकामनाएं! 🌸❤️`,
+
+`हमारी छोटी-छोटी लड़ाइयां,
+मस्ती और ढेर सारी यादें...
+
+यही तो हमारे रिश्ते को खास बनाती हैं।
+
+मेरी प्यारी बहन को
+रक्षाबंधन की बहुत सारी शुभकामनाएं! 🎀`,
+
+`इस रक्षाबंधन पर मेरी यही दुआ है
+कि तुम्हारे जीवन में कभी खुशियों की कमी न हो।
+
+तुम हमेशा मुस्कुराती रहो
+और अपने हर सपने को पूरा करो।
+
+शुभ रक्षाबंधन बहन! ❤️`,
+
+`रिश्ते बहुत होते हैं जिंदगी में,
+लेकिन भाई-बहन का रिश्ता
+अपने आप में सबसे अनमोल होता है।
+
+मेरी प्यारी बहन को
+रक्षाबंधन की ढेर सारी शुभकामनाएं। 🪢🌸`
+];
+
+
+/* =========================
+   VARIABLES
+========================= */
+
+let currentWish = "";
+
+let lastIndex = -1;
+
+
+/* =========================
+   CREATE WISH
+========================= */
 
 function createWish(){
 
-    const yourName = document.getElementById("yourName").value.trim();
-    const otherName = document.getElementById("otherName").value.trim();
-    const relation = document.getElementById("relation").value;
+    const yourName =
+        document.getElementById("yourName")
+        .value.trim();
+
+    const otherName =
+        document.getElementById("otherName")
+        .value.trim();
+
+    const relation =
+        document.getElementById("relation")
+        .value;
+
 
     if(yourName === "" || otherName === ""){
-        alert("Please dono naam enter kijiye ❤️");
+
+        alert("कृपया दोनों नाम लिखें ❤️");
+
         return;
     }
 
-    let message = "";
 
-    if(relation === "Brother"){
+    showRandomWish(
+        yourName,
+        otherName,
+        relation
+    );
+}
 
-        message =
-        `Dear ${otherName} ❤️
 
-Happy Raksha Bandhan!
+/* =========================
+   RANDOM WISH
+========================= */
 
-Bhai-behen ka rishta duniya ke sabse beautiful rishton mein se ek hai.
+function showRandomWish(
+    yourName,
+    otherName,
+    relation
+){
 
-Hamesha khush raho, smile karte raho aur hamari ye beautiful bonding hamesha aisi hi bani rahe. 🥰
+    let wishes =
+        relation === "Brother"
+        ? brotherWishes
+        : sisterWishes;
 
-Lots of love ❤️
 
-From ${yourName} 🎀`;
+    let index;
 
-    }else{
 
-        message =
-        `Dear ${otherName} ❤️
+    do{
 
-Happy Raksha Bandhan!
+        index =
+            Math.floor(
+                Math.random() * wishes.length
+            );
 
-Tum sirf meri behen nahi, meri best friend bhi ho. 🥰
-
-Life mein chahe kitni bhi problems aayein, hamari bonding hamesha special rahegi.
-
-Hamesha khush raho aur smile karti raho. 🌸
-
-Lots of love ❤️
-
-From ${yourName} 🎀`;
     }
 
-    finalWish = message;
+    while(
+        wishes.length > 1 &&
+        index === lastIndex
+    );
 
-    document.getElementById("resultTitle").innerText =
-        `${otherName}, This Wish Is For You ❤️`;
 
-    document.getElementById("wishText").innerText = message;
+    lastIndex = index;
 
-    document.getElementById("result").style.display = "block";
 
-    document.getElementById("result").scrollIntoView({
-        behavior:"smooth"
-    });
+    currentWish = wishes[index];
 
-    createHearts();
+
+    document.getElementById("receiver")
+        .innerText =
+        `प्रिय ${otherName} ❤️`;
+
+
+    document.getElementById("wishText")
+        .innerText =
+        currentWish;
+
+
+    document.getElementById("signature")
+        .innerText =
+        `प्यार सहित — ${yourName} ❤️`;
+
+
+    document.getElementById("result")
+        .style.display =
+        "block";
+
+
+    document.getElementById("result")
+        .scrollIntoView({
+            behavior:"smooth"
+        });
+
+
+    createFloating();
 }
+
+
+/* =========================
+   NEW WISH
+========================= */
+
+function newWish(){
+
+    const yourName =
+        document.getElementById("yourName")
+        .value.trim();
+
+    const otherName =
+        document.getElementById("otherName")
+        .value.trim();
+
+    const relation =
+        document.getElementById("relation")
+        .value;
+
+
+    if(
+        yourName === "" ||
+        otherName === ""
+    ){
+
+        alert("पहले नाम लिखें ❤️");
+
+        return;
+    }
+
+
+    showRandomWish(
+        yourName,
+        otherName,
+        relation
+    );
+}
+
+
+/* =========================
+   WHATSAPP
+========================= */
 
 function shareWhatsApp(){
 
+    const yourName =
+        document.getElementById("yourName")
+        .value.trim();
+
+    const otherName =
+        document.getElementById("otherName")
+        .value.trim();
+
+
     const text =
-    finalWish +
-    "\n\n🎀 Create your own Rakhi Wish ❤️";
 
-    const url =
-    "https://wa.me/?text=" +
-    encodeURIComponent(text);
+`🎀 शुभ रक्षाबंधन 🎀
 
-    window.open(url,"_blank");
+प्रिय ${otherName} ❤️
+
+${currentWish}
+
+प्यार सहित —
+${yourName} ❤️
+
+✨ अपनी Rakhi Wish बनाएं ✨`;
+
+
+    const whatsappURL =
+        "https://wa.me/?text=" +
+        encodeURIComponent(text);
+
+
+    window.open(
+        whatsappURL,
+        "_blank"
+    );
 }
+
+
+/* =========================
+   COPY
+========================= */
 
 function copyWish(){
 
-    navigator.clipboard.writeText(finalWish)
-    .then(function(){
+    const yourName =
+        document.getElementById("yourName")
+        .value.trim();
 
-        alert("Wish copied successfully ❤️");
+    const otherName =
+        document.getElementById("otherName")
+        .value.trim();
 
-    })
-    .catch(function(){
 
-        alert("Copy nahi ho paya. Please manually copy karein.");
+    const text =
 
-    });
+`🎀 शुभ रक्षाबंधन 🎀
+
+प्रिय ${otherName} ❤️
+
+${currentWish}
+
+प्यार सहित —
+${yourName} ❤️`;
+
+
+    navigator.clipboard
+        .writeText(text)
+        .then(function(){
+
+            alert(
+                "शुभकामना कॉपी हो गई ❤️"
+            );
+
+        })
+        .catch(function(){
+
+            alert(
+                "Copy नहीं हो पाया।"
+            );
+
+        });
 }
 
-function resetWish(){
 
-    document.getElementById("result").style.display = "none";
+/* =========================
+   FLOATING EFFECT
+========================= */
 
-    document.getElementById("yourName").value = "";
-    document.getElementById("otherName").value = "";
+function createFloating(){
 
-    window.scrollTo({
-        top:0,
-        behavior:"smooth"
-    });
-}
+    const symbols = [
+        "❤️",
+        "💖",
+        "🌸",
+        "🌺",
+        "✨",
+        "🎀"
+    ];
 
-function createHearts(){
 
-    for(let i=0;i<15;i++){
+    for(
+        let i = 0;
+        i < 18;
+        i++
+    ){
 
-        const heart = document.createElement("div");
+        const element =
+            document.createElement("div");
 
-        heart.className = "heart";
 
-        heart.innerText =
-            ["❤️","💖","🌸","✨","🎀"][Math.floor(Math.random()*5)];
+        element.className =
+            "floating";
 
-        heart.style.left =
-            Math.random()*100 + "vw";
 
-        heart.style.animationDuration =
-            (4 + Math.random()*4) + "s";
+        element.innerText =
+            symbols[
+                Math.floor(
+                    Math.random()
+                    * symbols.length
+                )
+            ];
 
-        document.body.appendChild(heart);
 
-        setTimeout(()=>{
-            heart.remove();
-        },8000);
+        element.style.left =
+            Math.random() * 100 + "vw";
+
+
+        element.style.animationDuration =
+            (4 + Math.random() * 4)
+            + "s";
+
+
+        element.style.fontSize =
+            (18 + Math.random() * 18)
+            + "px";
+
+
+        document.body.appendChild(
+            element
+        );
+
+
+        setTimeout(
+            function(){
+
+                element.remove();
+
+            },
+            8500
+        );
     }
 }
 
