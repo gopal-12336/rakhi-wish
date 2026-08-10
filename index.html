@@ -805,46 +805,40 @@ relation
 
 function surpriseMe(){
 
-const examples=[
+/*
+   Random name की जगह
+   केवल प्रिय भाई / प्रिय बहन
+*/
 
-["आरव","सिया","sister"],
-
-["रोहन","नेहा","sister"],
-
-["अमन","पूजा","sister"],
-
-["रिया","आदित्य","brother"],
-
-["नेहा","रोहित","brother"],
-
-["अंकित","प्रिया","sister"],
-
-["मोहन","राधिका","sister"]
-
-];
+const relation =
+Math.random() > 0.5
+? "brother"
+: "sister";
 
 
-const random=
-examples[
-Math.floor(
-Math.random()*examples.length
-)
-];
+const from =
+"आपका अपना";
+
+
+const to =
+relation === "brother"
+? "प्रिय भाई"
+: "प्रिय बहन";
 
 
 document.getElementById("from")
-.value=random[0];
+.value=from;
 
 
 document.getElementById("to")
-.value=random[1];
+.value=to;
 
 
 document.getElementById("relation")
-.value=random[2];
+.value=relation;
 
 
-/* random design */
+/* Random design */
 
 design=
 Math.floor(
@@ -852,10 +846,11 @@ Math.random()*5
 )+1;
 
 
-/* remove old photo */
+/* Photo हटाएं */
 
 document.getElementById("photo")
 .style.display="none";
+
 
 document.getElementById("photoInput")
 .value="";
@@ -884,7 +879,7 @@ location.href;
 let text=
 `🎀 शुभ रक्षाबंधन 🎀
 
-प्रिय ${to} ❤️
+${to} ❤️
 
 आपके लिए एक खास Rakhi Card बनाया गया है।
 
@@ -922,7 +917,7 @@ document.getElementById("to")
 let text=
 `🎀 शुभ रक्षाबंधन 🎀
 
-प्रिय ${to} ❤️
+${to} ❤️
 
 ${current}
 
